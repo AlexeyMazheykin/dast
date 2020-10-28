@@ -109,13 +109,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="hero__slaid1 hero__slaid">
+                <div class="hero__slaid2 hero__slaid">
                     <div class="hero__more">
                         <h1 class="hero__title">
-                            Встроенный пылесос
+                            Бытовая вентиляция
                         </h1>
                         <p class="hero__subtitle">
-                            Система центрального пылеудаления для квартир и частных домов
+                            Бытовая вентиляция для квартир и частных домов. Монтаж и установка оборудования.
                         </p>
                         <div class="hero__action">
                             <button class="hero__more-btn">Узнать больше</button>
@@ -124,8 +124,30 @@
                     </div>
                 </div>
             </div>
+            <div class="hero__choise">
+                <span class="hero__choise-item">
+                </span>
+                <span class="hero__choise-item">
+                </span>
+                <span class="hero__choise-item">
+                </span>
+                <span class="hero__choise-item">
+                </span>
+            </div>
         </section>
     </main>
+    <script>
+        const slaider = document.querySelector('.hero__slaider');
+        const choiseNode = document.querySelectorAll(".hero__choise-item")
+        choiseNode.forEach(el => {
+            el.addEventListener('click', () => {
+                slaider.classList.add('translate')
+            })
+        })
+
+
+    </script>
+
 </body>
 
 </html>

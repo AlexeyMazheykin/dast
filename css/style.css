@@ -222,21 +222,60 @@ p {
     margin: 0 auto;
     height: 820px;
 }
+.hero__choise {
+    position: absolute;
+    content: '';
+    left: calc(50% - 50px);
+    top: 700px;
+    width: 100px;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 6;
+    transition: all .2s;
+}
+.hero__choise:hover {
+    width: 150px;
+}
+.hero__choise-item {
+    content: '';
+    width: 15px;
+    height: 15px;
+    border: 2px solid rgb(241, 237, 237);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.hero__choise-item:hover {
+    background-color: rgb(241, 237, 237);
+}
+.hero__choise:hover {
+    width: 150px;
+    left: calc(50% - 75px);
+}
 .hero__slaider {
     position: absolute;
     height: 100%;
-    
     left: 0;
     top: 0;
     display: flex;
+    transition: all .9s;
 }
 .hero__slaid {
     width: 1900px;;
     position: relative;
     padding-top: 300px;
-    background: url('../img/vacuum.jpg') no-repeat;
+
     z-index: 2;
 }
+.hero__slaid1 {
+    background: url('../img/vacuum.jpg') no-repeat;
+}
+.hero__slaid2 {
+    background: url("../img/ventilation.png") no-repeat;
+}
+
+
 .hero__slaid::after {
     position: absolute;
     content: '';
@@ -295,6 +334,9 @@ p {
 .callback-btn:hover, .callback-btn:focus, .callback-btn:active {
 border-bottom: 2px solid #ffffff;
 outline: none;
+}
+.translate {
+    transform: translateX(-1900px);
 }
 
 
