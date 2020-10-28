@@ -152,6 +152,12 @@ a {
     text-decoration: none;
     color: inherit;
 }
+button {
+    font-family: inherit;
+}
+p {
+    margin: 0;
+}
 
 
 .wrapper {
@@ -210,19 +216,28 @@ a {
     color: #4b4f58;
 }
 .hero {
+    position: relative;
     max-width: 1900px;
+    overflow: hidden;
     margin: 0 auto;
-    
+    height: 820px;
 }
 .hero__slaider {
+    position: absolute;
+    height: 100%;
+    
+    left: 0;
+    top: 0;
+    display: flex;
+}
+.hero__slaid {
+    width: 1900px;;
     position: relative;
-    background-color: cadetblue;
-    height: 820px;
     padding-top: 300px;
-    background: url('../img/vacuum.jpg');
+    background: url('../img/vacuum.jpg') no-repeat;
     z-index: 2;
 }
-.hero__slaider::after {
+.hero__slaid::after {
     position: absolute;
     content: '';
     width: 100%;
@@ -245,12 +260,44 @@ a {
     font-size: 32px;
     font-weight: 200;
     text-transform: uppercase;
+    margin-bottom: 20px;
+}
+.hero__subtitle {
+    margin-bottom: 40px;
 }
 .hero__action {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
+.hero__action button {
+    width: 200px;
+    height: 50px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+}
+.hero__more-btn {
+    background-color: rgb(88, 155, 218);
+}
+.hero__more-btn:hover, .hero__more-btn:focus, .hero__more-btn:active {
+    background-color:  rgba(113, 163, 209, 0.466);
+    outline: none;
+}
+.callback-btn {
+    background: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+.callback-btn:hover, .callback-btn:focus, .callback-btn:active {
+border-bottom: 2px solid #ffffff;
+outline: none;
+}
+
+
 
 
 
