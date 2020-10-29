@@ -155,10 +155,15 @@ a {
 button {
     font-family: inherit;
 }
+h1, h2, h3 {
+    margin: 0;
+}
 p {
     margin: 0;
 }
-
+img {
+    border: 0;
+}
 
 .wrapper {
     max-width: 1262px;
@@ -181,7 +186,7 @@ p {
     justify-content: space-between;
 }
 .header__bottom {
-    padding: 20px 0 20px 0;
+    padding: 10px 0 10px 0;
     background: #ffffff;
 }
 .header__bottom-wrapper {
@@ -253,12 +258,12 @@ p {
     width: 15px;
     height: 15px;
     border: 2px solid rgb(241, 237, 237);
-    border-radius: 50%;
+
     cursor: pointer;
 }
 
 .hero__choise-item:hover {
-    background-color: rgb(241, 237, 237);
+    background-color: rgb(88, 155, 218);
 }
 .hero__choise:hover {
     width: 150px;
@@ -308,7 +313,7 @@ p {
 .hero__title {
     margin: 0;
     font-size: 32px;
-    font-weight: 200;
+    font-weight: 400;
     text-transform: uppercase;
     margin-bottom: 20px;
 }
@@ -327,7 +332,7 @@ p {
     color: white;
     cursor: pointer;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 400;
 }
 .hero__more-btn {
     background-color: rgb(88, 155, 218);
@@ -349,6 +354,104 @@ outline: none;
 .translate {
     transform: translateX(-1900px);
 }
+/*section about start*/
+
+.about {
+    padding: 30px 0 30px 0;
+    font-family: 'Montserrat';
+}
+.about__subtitle, .about__title {
+    max-width: 700px;
+}
+.about__title {
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+.about__subtitle {
+margin-bottom: 40px;
+}
+.about__cards {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 15px;
+}
+.about__card {
+
+}
+.about__pic-short {
+    grid-column: span 1;
+}
+.about__pic-long {
+    grid-column: span 2;
+}
+.about__link {
+    display: block;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+.about__link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(21,24,36);
+    opacity: 0.4;
+    transition: opacity .8s;
+}
+.about__pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.about__card-title {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-family: 'Roboto';
+    color: white;
+    letter-spacing: 2px;
+    transition: transform 0.6s;
+}
+.about__card-more {
+    position: absolute;
+    height: 70%;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    background-color: rgb(88, 155, 218);
+    text-align: center;
+    color: white;
+    opacity: 0;
+    transform: translateY(100%);
+    font-size: 14px;
+    font-family: 'Montserrat';
+    transition: opacity .8s, transform 1s;
+}
+.about__link:hover .about__card-more {
+    opacity: .9;
+    transform: translateY(0);
+}
+.about__link:hover::before {
+    opacity: 0.2;
+}
+.about__link:hover .about__card-title {
+    transform: translateX(-300px);
+}
+
+
+
+
+/*section about finish*/
 
 
 
