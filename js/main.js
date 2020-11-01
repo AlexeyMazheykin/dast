@@ -1,4 +1,3 @@
-
 //HEADER;
 const headerBottom = document.querySelector('.header__bottom');
 const headerTop = document.querySelector('.header__top');
@@ -15,43 +14,50 @@ window.addEventListener('scroll', () => {
     }
 });
 
+//SLIDER
 
-const slider = document.querySelector('.hero__slaider');
-let herroSlide = document.querySelectorAll('.hero__slaid');
-let herroArray = [];
+const carousel = document.querySelector('.carousel');
+const slider = document.querySelector('#slider');
+const choice = document.querySelector('.hero__choice');
+let direction;
+let count = 0;
+const choseItems = document.querySelectorAll('.hero__choice-item');
 
-herroSlide.forEach(el => {
-    herroArray.push(el.outerHTML);
-    el.remove();
+choseItems.forEach(function (el) {
+el.addEventListener('click', ()=> {
+    
 })
+})
+choice.addEventListener('click', function() {
+    direction = -1;
+    carousel.style.justifyContent = 'flex-start';
+    slider.style.transform = 'translateX(-20%)';
+});
 
-console.log(herroArray)
 
-let step = 0;
-let offset = 0;
+setInterval(function () {
+    count++
+    if (count === 4) {
+        count = 0
+    }
+    direction = -1;
+    carousel.style.justifyContent = 'flex-start';
+    slider.style.transform = 'translateX(-20%)';
+}, 10000)
+slider.addEventListener('transitionend', function() {
+    // get the last element and append it to the front
 
-function draw() {
-
-    if (step > 2) {
-        step = 0;
-        offset = 0;
+    if (direction === 1) {
+        slider.prepend(slider.lastElementChild);
+    } else {
+        slider.appendChild(slider.firstElementChild);
     }
 
-    slider.insertAdjacentHTML('beforeend', herroArray[step]);
-    slider.style.left = offset * (-1900) + 'px';
-    step++;
-    offset++;
-}
-
-draw()
-
-slider.addEventListener('click', function () {
-console.log(this)
-    draw()
-})
-
-
-
-
+    slider.style.transition = 'none';
+    slider.style.transform = 'translate(0)';
+    setTimeout(() => {
+        slider.style.transition = 'all 0.5s';
+    })
+},false);
 
 
