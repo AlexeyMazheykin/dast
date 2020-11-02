@@ -256,9 +256,9 @@ img {
 .hero__choice {
     position: absolute;
     content: '';
-    left: calc(50% - 50px);
+    left: calc(50% - 100px);
     top: 700px;
-    width: 100px;
+    width: 200px;
     height: 20px;
     display: flex;
     justify-content: space-between;
@@ -266,9 +266,7 @@ img {
     transition: all .5s;
 }
 
-.hero__choice:hover {
-    width: 150px;
-}
+
 
 .hero__choice-item {
     content: '';
@@ -283,10 +281,7 @@ img {
     background-color: rgb(88, 155, 218);
 }
 
-.hero__choice:hover {
-    width: 150px;
-    left: calc(50% - 75px);
-}
+
 
 
 
@@ -363,11 +358,11 @@ img {
 }
 
 .hero__more-btn {
-    background-color: rgb(88, 155, 218);
+    background-color: rgb(40,161,220);
 }
 
 .hero__more-btn:hover, .hero__more-btn:focus, .hero__more-btn:active {
-    background-color: rgba(113, 163, 209, 0.466);
+    background-color: rgba(40,161,220, 0.466);
     outline: none;
 }
 

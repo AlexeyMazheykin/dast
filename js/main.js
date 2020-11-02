@@ -2,7 +2,7 @@
 const headerBottom = document.querySelector('.header__bottom');
 const headerTop = document.querySelector('.header__top');
 const main = document.getElementById('main');
-const choiceNode = document.querySelectorAll(".hero__choise-item");
+
 
 window.addEventListener('scroll', () => {
     if (window.pageYOffset > headerTop.scrollHeight) {
@@ -19,11 +19,9 @@ window.addEventListener('scroll', () => {
 const carousel = document.querySelector('.carousel');
 const slider = document.querySelector('#slider');
 const choice = document.querySelector('.hero__choice');
+const choseItems = document.querySelectorAll('.hero__choice-item');
 let direction = -1;
 let count = 0;
-/*const choseItems = document.querySelectorAll('.hero__choice-item');*/
-let prev = document.querySelector('.prev');
-let next = document.querySelector('.next');
 
 /*choseItems.forEach(function (el) {
     el.addEventListener('click', () => {
@@ -74,7 +72,7 @@ prev.addEventListener('click', function () {
 
 });
 
-/*setInterval(function () {
+setInterval(function () {
     count++
     if (count > 4) {
         count = 0
@@ -86,7 +84,7 @@ prev.addEventListener('click', function () {
     direction = -1;
     carousel.style.justifyContent = 'flex-start';
     slider.style.transform = 'translateX(-20%)';
-}, 100000)*/
+}, 5000)
 
 slider.addEventListener('transitionend', function () {
     // get the last element and append it to the front
