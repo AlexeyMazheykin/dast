@@ -305,13 +305,13 @@ img {
     background: url("../img/ventilation.png") no-repeat;
 }
 .hero__slide3 {
-    background: url("../img/humidification.jpg") center / contain no-repeat;
+    background: url("../img/humidification.jpg") center / cover no-repeat;
 }
 .hero__slide4 {
-    background: url("../img/humidification.jpg") center / contain no-repeat;
+    background: url("../img/watering.jpg") center / cover no-repeat;
 }
 .hero__slide5 {
-    background: url("../img/humidification.jpg") center / contain no-repeat;
+    background: url("../img/linen.jpg") center / cover no-repeat;
 }
 
 
