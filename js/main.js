@@ -20,10 +20,60 @@ const carousel = document.querySelector('.carousel');
 const slider = document.querySelector('#slider');
 const choice = document.querySelector('.hero__choice');
 const choseItems = document.querySelectorAll('.hero__choice-item');
-let direction = -1;
+let direction = 1;
 let count = 0;
+let countChild = 0;
 
-/*choseItems.forEach(function (el) {
+
+choseItems.forEach(element => {
+    element.addEventListener('click', function () {
+        /*clearInterval(interval);*/
+
+     slider.style.transform = `translateX(${-(+this.dataset.id - count) * 1900}px)`;
+        countChild = +this.dataset.id - count;
+         count = +this.dataset.id;
+
+
+
+        console.log(this.dataset.id, count);
+        /*else if (count > +this.dataset.id || count === 0) {
+              debugger
+              console.log( this.dataset.id, count)
+              slider.style.transform =`translate(${(+this.dataset.id-count)*1900}px)`;
+          }*/
+    });
+});
+
+/*let interval = setInterval(function () {
+    count++
+    if (count > 4) {
+        count = 0;
+    }
+    slider.style.transform = `translate(-${count*1900}px)`;
+},1000);*/
+
+
+slider.addEventListener('transitionend', function () {
+    console.log('Событие')
+    if (direction === -1) {
+        slider.prepend(slider.lastElementChild);
+    } else {
+        for (let i = 0; i < countChild; i++) {
+            slider.appendChild(slider.firstElementChild);
+
+        }
+    }
+
+    slider.style.transition = 'none';
+    slider.style.transform = `translateX(0px)`;
+    setTimeout(() => {
+        slider.style.transition = 'all 0.5s';
+    })
+}, false);
+
+
+/*
+choseItems.forEach(function (el) {
     el.addEventListener('click', () => {
         console.log(count, el.dataset.id)
         if (count > el.dataset.id) {
@@ -50,9 +100,9 @@ let count = 0;
             console.log(count, el.dataset.id)
         }
     })
-})*/
+})
 
-/*next.addEventListener('click', function () {
+next.addEventListener('click', function () {
     if (direction === 1) {
         //  direction = -1;
         slider.prepend(slider.lastElementChild);
@@ -70,7 +120,7 @@ prev.addEventListener('click', function () {
     carousel.style.justifyContent = 'flex-end';
     slider.style.transform = 'translateX(20%)';
 
-});*/
+});
 
 setInterval(function () {
     count++
@@ -102,5 +152,6 @@ console.log (slider)
         slider.style.transition = 'all 0.5s';
     })
 }, false);
+*/
 
 
