@@ -52,7 +52,7 @@ let count = 0;
     })
 })*/
 
-next.addEventListener('click', function () {
+/*next.addEventListener('click', function () {
     if (direction === 1) {
         //  direction = -1;
         slider.prepend(slider.lastElementChild);
@@ -70,7 +70,7 @@ prev.addEventListener('click', function () {
     carousel.style.justifyContent = 'flex-end';
     slider.style.transform = 'translateX(20%)';
 
-});
+});*/
 
 setInterval(function () {
     count++
@@ -93,8 +93,9 @@ slider.addEventListener('transitionend', function () {
         slider.prepend(slider.lastElementChild);
     } else {
         slider.appendChild(slider.firstElementChild);
-    }
 
+    }
+console.log (slider)
     slider.style.transition = 'none';
     slider.style.transform = `translateX(0)`;
     setTimeout(() => {
