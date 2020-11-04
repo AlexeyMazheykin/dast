@@ -49,13 +49,13 @@ choseItems.forEach(element => {
 });
 
 let interval = setInterval(function () {
-count++
-   if (count > 4) {
-      count = 0;
+    count++
+    if (count > 4) {
+        count = 0;
     }
     countChild = 1;
     slider.style.transform = `translateX(-1900px)`;
-},10000);
+}, 10000);
 
 slider.addEventListener('transitionend', function () {
     console.log('Событие', count, countChild)
@@ -76,7 +76,36 @@ slider.addEventListener('transitionend', function () {
     })
 }, false);
 
-//BEST HOVER
+//BEST
+
+const bestBtn = document.querySelectorAll('.best__btn ');
+const bestSlider = document.querySelector('.best__slider');
+const bestBtnNext = document.querySelector('.best__btn-next');
+const bestBtnPrev = document.querySelector('.best__btn-prev');
+let bestCount = 0;
+let sliderPosition = 0;
+bestBtnPrev.style.display = 'none';
+
+bestBtn.forEach(function (element) {
+    element.addEventListener('click', function () {
+        bestCount += +this.dataset.count;
+        console.log(bestCount);
+        sliderPosition += +this.dataset.trans
+        bestSlider.style.left = `${sliderPosition}%`;
+        if (sliderPosition == 0) {
+            bestBtnPrev.style.display = 'none';
+        } else {
+            bestBtnPrev.style.display = 'block';
+        }
+        if (bestCount >= bestSlider.childElementCount - 1) {
+            bestBtnNext.style.display = 'none';
+        } else {
+            bestBtnNext.style.display = 'block';
+        }
+    });
+});
+
+
 
 
 
