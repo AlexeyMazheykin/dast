@@ -121,6 +121,22 @@ body {
     line-height: 1.2;
     font-weight: 400;
     color: #102746;
+    position: relative;
+}
+.scroll__top {
+    display: none;
+    position: fixed;
+    color: #87878b;
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
+    background-color: #102746;
+    left: 4%;
+    bottom: 10%;
+    z-index: 999;
+    border: none;
+    line-height: 1.9;
+    background-color: rgba(174, 172, 177, 0.24);
 }
 
 ul {
@@ -234,10 +250,7 @@ img {
 }
 
 .hero {
-    max-width: 1900px;
-    margin: 0 auto;
     overflow: hidden;
-
 }
 .carousel {
     width: 100%;
@@ -246,9 +259,10 @@ img {
 }
 .hero__slider {
     display: flex;
+    position: relative;
+    left: 0;
     height: 100%;
     width: 100%;
-    /* flex-shrink: 0; */
     transition: all .5s
 }
 .hero__choice {
@@ -281,7 +295,7 @@ img {
 
 
 .hero__slide {
-    flex-basis: 1900px;
+    flex-basis: 100%;
     position: relative;
     padding-top: 300px;
     z-index: 2;
@@ -289,11 +303,11 @@ img {
 }
 
 .hero__slide1 {
-    background: url('../img/vacuum.jpg') no-repeat;
+    background: url('../img/vacuum.jpg') center / cover no-repeat;
 }
 
 .hero__slide2 {
-    background: url("../img/ventilation.png") no-repeat;
+    background: url("../img/ventilation.png") center / cover no-repeat;
 }
 .hero__slide3 {
     background: url("../img/humidification.jpg") center / cover no-repeat;
@@ -531,6 +545,7 @@ img {
 
 .best {
     padding: 0 0 30px 0;
+    overflow: hidden;
 }
 .best .wrapper {
     overflow: hidden;
@@ -546,11 +561,9 @@ img {
 .best__carousel {
     width: 100%;
     height: 410px;
-    padding: 30px 15px;
     position: relative;
     overflow: hidden;
-
-
+    padding: 5px 0 5px 5px;
 }
 .best__btn {
     opacity: 0;
@@ -562,7 +575,6 @@ img {
     font-weight: 400;
     font-size: 54px;
     user-select: none;
-    border-radius: 10px;
     color: #87878b;
     cursor: pointer;
     transition: opacity  .2s;
@@ -590,10 +602,11 @@ img {
     flex-shrink: 0;
     flex-direction: column;
     justify-content: space-between;
-    flex-basis: 25%;
-    padding: 30px 30px 0;
+    flex-basis: 24%;
+    /*padding: 30px 30px 0;*/
     transition: all .5s;
     position: relative;
+    margin-right: 1%;
 }
 .best__card:hover {
     box-shadow: 0 0 5px rgba(0,0,0,0.5);
@@ -601,23 +614,11 @@ img {
 .best__card:hover .best__cart-svg {
     fill: white;
 }
-
-/*.best__card::before {
-    content: '';
-    position: absolute;
-    width: 9%;
-    height: 6%;
-    left: 16%;
-    top: 23%;
-    opacity: 1;
-    background: linear-gradient(270deg, rgb(75,79,88) 50%, rgb(40,161,220) 50%);
-    !*background: url('../img/logopng.png') center / cover no-repeat;*!
+.best__desc {
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
-
-.best__card:hover::before {
-    opacity: 0.5;
-}*/
-
 .best__card-link {
     align-self: center;
 }
@@ -629,12 +630,13 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding-bottom: 30px;
+    padding: 10px 30px 30px 30px;
     background-color: rgba(39, 157, 215, 0);
     transition: all .5s;
 }
 .best__card:hover .best__card-footer {
     background-color: rgba(39, 157, 215, 1);
+    color: white;
 }
 
 .best__price-title {
