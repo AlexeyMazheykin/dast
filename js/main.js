@@ -15,15 +15,15 @@ window.addEventListener('scroll', () => {
     }
 });
 
-//SLIDER
+//HERO SLIDER
 
 const sliderText = document.querySelector('#slider').innerHTML;
 const slider = document.querySelector('#slider');
-const choice = document.querySelector('.hero__choice');
 const choiceItems = document.querySelectorAll('.hero__choice-item');
+const slidesQuantity = document.querySelectorAll('.hero__slide').length;
 let countHero = 0;
 let countInt = 4;
-let countListener = 1;
+let countListener = 0;
 
 choiceItems.forEach(el => {
     el.addEventListener('click', function () {
@@ -31,12 +31,8 @@ choiceItems.forEach(el => {
             countHero = +this.dataset.id
             slider.style.left = `-${100 * (+this.dataset.id)}%`
         } else {
-            slider.style.left = `-${100 * (+this.dataset.id)}%`
-            if (countInt / countListener < +this.dataset.id * countListener) {
-                countInt = +this.dataset.id * countListener + countInt;
-            } else if (countInt / countListener > +this.dataset.id * countListener) {
-                countInt = countInt - +this.dataset.id;
-            }
+            slider.style.left = `-${100 * (+this.dataset.id + countListener)}%`
+            countInt = +this.dataset.id + countListener;
         }
     });
 });
@@ -49,14 +45,12 @@ setInterval(function () {
         countHero = 5;
         countInt++;
         slider.style.left = `-${100 * (countInt)}%`
-        console.log(countHero, countInt, countListener)
         if (countInt % 5 === 0) {
-            countListener++
+            countListener += slidesQuantity;
             slider.insertAdjacentHTML('beforeend', sliderText);
         }
     }
-},20000);
-
+}, 20000);
 
 
 //BEST
@@ -92,7 +86,7 @@ const scrollTop = document.querySelector('.scroll__top');
 let scrolled;
 let timer;
 
-window.addEventListener('scroll', () =>{
+window.addEventListener('scroll', () => {
     if (window.pageYOffset > hero.scrollHeight) {
         scrollTop.style.display = 'block';
     } else {
@@ -101,10 +95,11 @@ window.addEventListener('scroll', () =>{
 });
 scrollTop.addEventListener('click', () => {
 
-scrolled = window.pageYOffset;
+    scrolled = window.pageYOffset;
     scrollToTop();
 });
-function scrollToTop () {
+
+function scrollToTop() {
     if (scrolled > 0) {
         window.scrollTo(0, scrolled);
         scrolled = scrolled - 50;
